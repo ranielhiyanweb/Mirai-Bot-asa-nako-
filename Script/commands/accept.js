@@ -1,7 +1,7 @@
 const moment = require("moment-timezone");
 
 module.exports.config = {
-  name: "acp",
+  name: "accept",
   version: "1.0.0",
   hasPermssion: 2,
   credits: "Mirai Team",

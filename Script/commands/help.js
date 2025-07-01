@@ -3,6 +3,7 @@ const ITEMS_PER_PAGE = 15;
 module.exports.config = {
   name: "help",
   version: "2.0.0",
+  hasPrefix: false,
   hasPermssion: 0,
   credits: "Aminul Sordar",
   description: "📚 Show all commands with pagination and details",

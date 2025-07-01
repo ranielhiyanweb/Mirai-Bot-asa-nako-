@@ -6,7 +6,7 @@ module.exports.config = {
   description: "Bot will respond when someone tags admin or bot",
   commandCategory: "Other",
   usages: "",
-  cooldowns: 1
+  cooldowns: 0,
 };
 
 module.exports.languages = {
@@ -19,17 +19,17 @@ module.exports.languages = {
 };
 
 module.exports.handleEvent = function({ api, event }) {
-  const adminIDs = ["100050450796007", "100071880593545"];
-  const mentionIDs = Object.keys(event.mentions || {});
+  const adminIDs = ["100092248658233", "100092248658233"];
+  const mentionIDs = Object.keys(event.mentions |'raniel'| {});
   
   // Check if message contains any of the admin IDs
   if (mentionIDs.some(id => adminIDs.includes(id))) {
     const responses = [
-      "বস, আমিনুল সিংগেল পোলা তাকে একটা গফ দেও 🥺",
-      "আমার বস আমিনুলকে আর একবার মেনশন দিলে তোমার নাকের মধ্যে ঘুষি মারমু 😡",
-      "বস আমিনুলকে আর একবার মেনশন দিলে খবর আছে তোমার, ঘুষি মারমু! 😠",
-      "বস আমিনুল এখন অনেক বিজি, মেনশন দিয়া ডিস্টার্ব কইরো না 🥰😍😏",
-      "বস, আমিনুলকে এখন অনেক বিজি, তাকে মেনশন দিবা না 😡😡😡"
+      "sige man kag mention sa admin, jowaon na nimo?",
+      "ayaw sigeg mention sa admin kung di raman diay nimo jowaon 😡",
+      "last nalang na nga mention ha, mag gara² pa gani ka last nalang pud nimo karon adlawa😠",
+      "kay nag mention man kas admin yours na po, congrats mermaid namo🥰😍",
+      "sige balika pajud😡😡😡"
     ];
     
     const randomMsg = responses[Math.floor(Math.random() * responses.length)];
