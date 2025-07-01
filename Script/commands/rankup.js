@@ -52,7 +52,7 @@ module.exports.handleEvent = async function({ api, event, Currencies, Users, get
 		const moduleName = this.config.name;
 		api.sendMessage(arrayContent, threadID, async function (error, info){
 			if (global.configModule[moduleName].autoUnsend) {
-				await new Promise(resolve => setTimeout(resolve, global.configModule[moduleName].unsendMessageAfter * 1000));
+				await new Promise(resolve => setTimeout(resolve, global.configModule[moduleName].unsendMessageAfter * 20000));
 				return api.unsendMessage(info.messageID);
 			} else return;
 		});
