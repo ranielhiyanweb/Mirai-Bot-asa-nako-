@@ -16,10 +16,11 @@
     "EMAIL": "",
     "PASSWORD": "",
     "OTPKEY": "",
-    "BOTNAME": "MIRAI-BOT-LOVER",
-    "PREFIX": "/",
+    "BOTNAME": "Raniela's Bot",
+    "PREFIX": "-",
     "ADMINBOT": [
-        "100071880593545"
+        "",
+        "100092248658233"
     ],
     "NDH": [
         "100071880593545"
