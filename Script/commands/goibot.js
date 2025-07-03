@@ -17,7 +17,7 @@ module.exports.handleEvent = async function({ api, event, args, Threads, Users }
   var id = event.senderID;
   var name = await Users.getNameUser(event.senderID);
 
-  var tl = [" ayaw sigeg pangita nako. " , "sa owner napud pangita kay pwede ma bbtym ayaw sigeg bot, bot, bot...!" , "ayaw sigeg pangita nako naa nakoy uyab" ,];
+  var tl = [" ayaw sigeg pangita nako. ", "sa owner napud pangita kay pwede ma bbtym ayaw sigeg bot, bot, bot...!", "ayaw sigeg pangita nako naa nakoy uyab",];
   var rand = tl[Math.floor(Math.random() * tl.length)]
 
     if ((event.body.toLowerCase() == "bie") || (event.body.toLowerCase() == "ming gabie")) {

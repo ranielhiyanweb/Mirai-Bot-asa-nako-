@@ -33,7 +33,7 @@ module.exports.run = async function({ api, event }) {
 
       const memberCount = participantIDs.length;
       let msg = threadData.customJoin || 
-`✨🆆🅴🅻🅻 🅲🅾🅼🅴 ✨\n\n❥ 𝐍𝐄𝐖~ 𝐌𝐄𝐌𝐁𝐄𝐑 : {name}\n\n🌸 You are welcome in our group – {threadName}\nYou are now our {soThanhVien} member number 🥰\n\n╭•┄┅═══❁🌺❁═══┅┄•╮\n     🌸 Raniela's Bot🌸\n╰•┄┅═══❁🌺❁═══┅┄•╯`;
+`Welcome \n 𝐍𝐄𝐖~ 𝐌𝐄𝐌𝐁𝐄𝐑 : {name}\n\n🌸 You are welcome in our group – {threadName} \nYou are now our {soThanhVien} member number 🥰\n`;
 
       msg = msg
         .replace(/\{name}/g, nameArray.join(', '))
