@@ -13,7 +13,7 @@ module.exports.config = {
 
 module.exports.languages = {
   en: {
-    title: "🤍✨ ROBOT PREFIX ✨🤍",
+    title: " ROBOT PREFIX",
     botName: "BOT NAME",
     prefix: "ROBOT PREFIX",
     cmdCount: "ROBOT CMD",
@@ -34,10 +34,11 @@ module.exports.handleEvent = async ({ api, event, getText }) => {
   const body = event.body ? event.body.toLowerCase() : '';
   if (body.startsWith("prefix")) {
     const threadInfo = await api.getThreadInfo(event.threadID);
+    
     const groupName = threadInfo.threadName || "This Group";
     const time = moment.tz("Asia/Dhaka").format("LLLL");
 
-    const text = `╭•┄┅═══❁🌺❁═══┅┄•╮\n${getText("title")}\n╰•┄┅═══❁🌺❁═══┅┄•╯\n\n${getText("botName")} : ${global.config.BOTNAME}\n${getText("prefix")} : ｢ ${global.config.PREFIX} ｣\n${getText("cmdCount")}: ｢ ${client.commands.size} ｣\n${getText("time")}: ${time}\n${getText("group")}: ${groupName}`;
+    const text = `${getText("title")}\n\n${getText("botName")} : ${global.config.BOTNAME}\n${getText("prefix")} : ｢ ${global.config.PREFIX} ｣\n${getText("cmdCount")}: ｢ ${client.commands.size} ｣\n\n${getText("time")}: ${time}\n${getText("group")}: ${groupName}`;
 
     api.sendMessage({ body: text }, event.threadID, event.messageID);
   }

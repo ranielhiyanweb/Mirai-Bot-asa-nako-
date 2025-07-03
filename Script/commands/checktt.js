@@ -3,7 +3,7 @@ module.exports.config = {
 	version: "1.0.5",
 	hasPermssion: 0,
 	credits: "Mirai Team",
-	description: "Kiểm tra lượt tương tác trong nhóm",
+	description: "Check group interactionsm",
 	commandCategory: "system",
 	usages: "[all/tag]",
 	cooldowns: 5,

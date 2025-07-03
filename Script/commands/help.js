@@ -15,9 +15,9 @@ module.exports.config = {
 module.exports.languages = {
   en: {
     helpList:
-      "📖 𝗛𝗘𝗟𝗣 𝗠𝗘𝗡𝗨 (𝗣𝗮𝗴𝗲 %1/%2)\n━━━━━━━━━━━━━━━\n%3\n━━━━━━━━━━━━━━━\n📌 𝗧𝗼𝘁𝗮𝗹 𝗖𝗼𝗺𝗺𝗮𝗻𝗱𝘀: %4\n📂 𝗧𝗼𝘁𝗮𝗹 𝗘𝘃𝗲𝗻𝘁𝘀: %5\n🧑‍💻 𝗠𝗮𝗱𝗲 𝗯𝘆: Aminul Sordar\n💡 %6",
+      "📖 𝗛𝗘𝗟𝗣 𝗠𝗘𝗡𝗨 (𝗣𝗮𝗴𝗲 %1/%2)\n━━━━━━━━━━━━━━━\n%3\n━━━━━━━━━━━━━━━\n📌 𝗧𝗼𝘁𝗮𝗹 𝗖𝗼𝗺𝗺𝗮𝗻𝗱𝘀: %4\n📂 𝗧𝗼𝘁𝗮𝗹 𝗘𝘃𝗲𝗻𝘁𝘀: %5\n🧑‍💻 𝗠𝗮𝗱𝗲 𝗯𝘆: Secret para bibo\n💡 %6",
     moduleInfo:
-      "🔹 𝗖𝗼𝗺𝗺𝗮𝗻𝗱: %1\n📖 𝗗𝗲𝘀𝗰: %2\n\n🛠 𝗨𝘀𝗮𝗴𝗲: %3\n📁 𝗖𝗮𝘁𝗲𝗴𝗼𝗿𝘆: %4\n⏱ 𝗖𝗼𝗼𝗹𝗱𝗼𝘄𝗻: %5s\n🔐 𝗣𝗲𝗿𝗺𝗶𝘀𝘀𝗶𝗼𝗻: %6\n👨‍💻 𝗖𝗼𝗱𝗲𝗱 𝗯𝘆: %7",
+      "🔹 𝗖𝗼𝗺𝗺𝗮𝗻𝗱: %1\n📖 𝗗𝗲𝘀𝗰: %2\n\n🛠 𝗨𝘀𝗮𝗴𝗲: %3\n📁 𝗖𝗮𝘁𝗲𝗴𝗼𝗿𝘆: %4\n⏱ 𝗖𝗼𝗼𝗹𝗱𝗼𝘄𝗻: %5s\n🔐 𝗣𝗲𝗿𝗺𝗶𝘀𝘀𝗶𝗼𝗻: %6\n",
     user: "User 👤",
     adminGroup: "Group Admin 👮",
     adminBot: "Bot Admin 🤖"
@@ -27,7 +27,7 @@ module.exports.languages = {
 const tips = [
   "Try: help uptime to see how it works!",
   "Use the command name like 'help info'.",
-  "Want updates? Join AminulBot's support group!",
+  " ",
   "You can change prefix per group.",
   "Use commands wisely and don't spam.",
   "Need image help? Type help photo!"
@@ -98,3 +98,4 @@ module.exports.run = async function ({ api, event, args, getText }) {
 
   return api.sendMessage(msg, threadID, messageID);
 };
+module.exports.run = () => {}; // No manual run needed

@@ -22,11 +22,7 @@ module.exports = {
       success: "🎬 Enjoy your video!",
       error: "❌ Failed to download video."
     },
-    vi: {
-      downloading: "⏳ Vui lòng chờ, đang tải video...",
-      success: "🎬 Chúc bạn xem vui vẻ!",
-      error: "❌ Không thể tải video."
-    }
+    
   },
 
   run: async function ({ api, event, args }) {

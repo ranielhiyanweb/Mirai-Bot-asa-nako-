@@ -3,7 +3,7 @@ module.exports.config = {
 	version: "1.0.2",
 	hasPermssion: 2,
 	credits: "Mirai Team",
-	description: "Quản lý/Kiểm soát toàn bộ module của bot",
+	description: "Manage/Control all bot modules",
 	commandCategory: "config",
 	usages: "[load/unload/loadAll/unloadAll/info] [tên module]",
 	cooldowns: 5,

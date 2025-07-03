@@ -3,7 +3,7 @@ module.exports.config = {
   version: "1.0.0",
   hasPermssion: 0,
   credits: "Mirai Team",
-  description: "Lấy ID người dùng hoặc người được tag.",
+  description: "Get the ID of the user or tagged person.",
   commandCategory: "other",
   cooldowns: 5
 };

@@ -3,7 +3,7 @@ module.exports.config = {
 	version: "1.0.4",
 	hasPermssion: 0,
 	credits: "Mirai Team",
-	description: "Game bài cào dành cho nhóm có đặt cược",
+	description: "Scratch card game ",
 	commandCategory: "game-mp",
 	usages: "[start/join/info/leave]",
 	cooldowns: 1
@@ -31,21 +31,21 @@ module.exports.handleEvent = async ({ event, api, Users }) => {
 			values.player[key].card2 = card2;
 			values.player[key].card3 = card3;
 			values.player[key].tong = tong;
-			api.sendMessage(`Bài của bạn: ${card1} | ${card2} | ${card3} \n\nTổng bài của bạn: ${tong}`, values.player[key].id, (error, info) => {
-				if (error) api.sendMessage(`Không thể chia bài cho người dùng: ${values.player[key].id}`, threadID)
+			api.sendMessage(`Your cards: ${card1} | ${card2} | ${card3} \n\nTotal of your cards: ${tong}`, values.player[key].id, (error, info) => {
+				if (error) api.sendMessage(`Cannot deal cards to users: ${values.player[key].id}`, threadID)
 			});
 				
 		}
 		values.chiabai = 1;
 		global.moduleData.baicao.set(threadID, values);
-		return api.sendMessage("Bài đã được chia thành công! tất cả mọi người đều có 2 lượt đổi bài nêú không thâý bài hãy kiểm tra lại tin nhắn chờ", threadID);
+		return api.sendMessage("The cards have been dealt successfully! Everyone has 2 turns to change cards. If you don't see your cards, check your waiting messages.", threadID);
 	}
 
-	if (body.indexOf("đổi bài") == 0) {
+	if (body.indexOf("change post") == 0) {
 		if (values.chiabai != 1) return;
 		var player = values.player.find(item => item.id == senderID);
-		if (player.doibai == 0) return api.sendMessage("Bạn đã sử dụng toàn bộ lượt đổi bài", threadID, messageID);
-		if (player.ready == true) return api.sendMessage("Bạn đã ready, bạn không thể đổi bài!", threadID, messageID);
+		if (player.doibai == 0) return api.sendMessage("You have used all your turns to change cards.", threadID, messageID);
+		if (player.ready == true) return api.sendMessage(" ready, you can not change the card!", threadID, messageID);
 		const card = ["card1","card2","card3"];
 		player[card[(Math.floor(Math.random() * card.length))]] = Math.floor(Math.random() * (9 - 1 + 1)) + 1;
 		player.tong = (player.card1 + player.card2 + player.card3);
@@ -53,8 +53,8 @@ module.exports.handleEvent = async ({ event, api, Users }) => {
 		if (player.tong >= 10) player.tong -= 10;
 		player.doibai -= 1;
 		global.moduleData.baicao.set(values);
-		return api.sendMessage(`Bài của bạn sau khi được đổi: ${player.card1} | ${player.card2} | ${player.card3} \n\nTổng bài của bạn: ${player.tong}`, player.id, (error, info) => {
-			if (error) api.sendMessage(`Không thể đổi bài cho người dùng: ${player.id}`, threadID)
+		return api.sendMessage(`Your post after being changed: ${player.card1} | ${player.card2} | ${player.card3} \n\nTotal of your post: ${player.tong}`, player.id, (error, info) => {
+			if (error) api.sendMessage(`Cannot change post for user: ${player.id}`, threadID)
 		});
 	}
 
@@ -73,13 +73,13 @@ module.exports.handleEvent = async ({ event, api, Users }) => {
 
 			for (const info of player) {
 				const name = await Users.getNameUser(info.id);
-				ranking.push(`${num++} • ${name} với ${info.card1} | ${info.card2} | ${info.card3} => ${info.tong} nút\n`);
+				ranking.push(`${num++} • ${name} with ${info.card1} | ${info.card2} | ${info.card3} => ${info.tong} button\n`);
 			}
 
 			global.moduleData.baicao.delete(threadID);
-			return api.sendMessage(`Kết quả:\n\n ${ranking.join("\n")}`, threadID);
+			return api.sendMessage(`Result:\n\n ${ranking.join("\n")}`, threadID);
 		}
-		else return api.sendMessage(`Người chơi: ${name} Đã sẵn sàng lật bài, còn lại: ${values.player.length - values.ready} người chơi chưa lật bài`, event.threadID);
+		else return api.sendMessage(`Player: ${name} Ready to show cards, remaining: ${values.player.length - values.ready} player has not shown card`, event.threadID);
 	}
 	
 	if (body.indexOf("nonready") == 0) {
@@ -90,7 +90,7 @@ module.exports.handleEvent = async ({ event, api, Users }) => {
 			const name = global.data.userName.get(info.id) || await Users.getNameUser(info.id);
 			msg.push(name);
 		}
-		if (msg.length != 0) return api.sendMessage("Những người chơi chưa ready bao gồm: " + msg.join(", "), threadID);
+		if (msg.length != 0) return api.sendMessage("Players who are not ready include: " + msg.join(", "), threadID);
 		else return;
 	}
 }
@@ -107,33 +107,33 @@ module.exports.run = async ({ api, event, args }) => {
 	switch (args[0]) {
 		case "create":
 		case "-c": {
-			if (global.moduleData.baicao.has(threadID)) return api.sendMessage("Hiện tại nhóm này đang có bàn bài cào đang được mở", threadID, messageID);
-			global.moduleData.baicao.set(event.threadID, { "author": senderID, "start": 0, "chiabai": 0, "ready": 0, player: [ { "id": senderID, "card1": 0, "card2": 0, "card3": 0, "doibai": 2, "ready": false } ] });
-			return api.sendMessage("Bàn bài cào của bạn đã được tạo thành công!, để tham gia bạn hãy nhập baicao join", threadID, messageID);
+			if (global.moduleData.baicao.has(threadID)) return api.sendMessage("This group currently has a scratch card table open.", threadID, messageID);
+			global.moduleData.baicao.set(event.threadID, { "author": senderID, "start": 0, "good morning": 0, "ready": 0, player: [ { "id": senderID, "card1": 0, "card2": 0, "card3": 0, "good morning": 2, "ready": false } ] });
+			return api.sendMessage("Your scratch card table has been successfully created! To join, enter baicao join", threadID, messageID);
 		}
 		
 		case "join":
 		case "-j": {
 			if (!values) return api.sendMessage("Hiện tại chưa có bàn bài cào nào, bạn có thể tạo bằng cách sử dụng baicao create", threadID, messageID);
-			if (values.start == 1) return api.sendMessage("Hiện tại bàn bài cào đã được bắt đầu", threadID, messageID);
-			if (values.player.find(item => item.id == senderID)) return api.sendMessage("Bạn đã tham gia vào bàn bài cào này!", threadID, messageID);
-			values.player.push({ "id": senderID, "card1": 0, "card2": 0, "card3": 0, "tong": 0, "doibai": 2, "ready": false });
+			if (values.start == 1) return api.sendMessage("The scratch card table has now started.", threadID, messageID);
+			if (values.player.find(item => item.id == senderID)) return api.sendMessage("You have joined this scratch card table!", threadID, messageID);
+			values.player.push({ "id": senderID, "card1": 0, "card2": 0, "card3": 0, "tong": 0, "good morning": 2, "ready": false });
 			global.moduleData.baicao.set(threadID, values);
-			return api.sendMessage("Bạn đã tham gia thành công!", threadID, messageID);
+			return api.sendMessage("You have successfully joined.!", threadID, messageID);
 		}
 
 		case "leave":
 		case "-l": {
-			if (typeof values.player == "undefined") return api.sendMessage("Hiện tại chưa có bàn bài cào nào, bạn có thể tạo bằng cách sử dụng baicao create", threadID, messageID);
-			if (!values.player.some(item => item.id == senderID)) return api.sendMessage("Bạn chưa tham gia vào bàn bài cào trong nhóm này!", threadID, messageID);
-			if (values.start == 1) return api.sendMessage("Hiện tại bàn bài cào đã được bắt đầu", threadID, messageID);
+			if (typeof values.player == "undefined") return api.sendMessage("There is no baccarat table yet, you can create one using baicao create", threadID, messageID);
+			if (!values.player.some(item => item.id == senderID)) return api.sendMessage("You have not joined the scratch card table in this group!", threadID, messageID);
+			if (values.start == 1) return api.sendMessage("The scratch card table has now started.", threadID, messageID);
 			if (values.author == senderID) {
 				global.moduleData.baicao.delete(threadID);
-				api.sendMessage("Author đã rời khỏi bàn, đồng nghĩa với việc bàn sẽ bị giải tán!", threadID, messageID);
+				api.sendMessage("The author has left the table, which means the table will be disbanded!", threadID, messageID);
 			}
 			else {
 				values.player.splice(values.player.findIndex(item => item.id === senderID), 1);
-				api.sendMessage("Bạn đã rời khỏi bàn bài cào này!", threadID, messageID);
+				api.sendMessage("You have left this poker table!", threadID, messageID);
 				global.moduleData.baicao.set(threadID, values);
 			}
 			return;
@@ -141,21 +141,21 @@ module.exports.run = async ({ api, event, args }) => {
 
 		case "start":
 		case "-s": {
-			if (!values) return api.sendMessage("Hiện tại chưa có bàn bài cào nào, bạn có thể tạo bằng cách sử dụng baicao create", threadID, messageID);
-			if (values.author !== senderID) return api.sendMessage("Bạn không phải là chủ bàn để có thể bắt đầu", threadID, messageID);
-			if (values.player.length <= 1) return api.sendMessage("Hiện tại bàn của bạn không có người chơi nào tham gia, bạn có thể mời người đấy tham gia bằng cách yêu cầu người chơi khác nhập baicao join", threadID, messageID);
-			if (values.start == 1) return api.sendMessage("Hiện tại bàn đã được bắt đầu bởi chủ bàn", threadID, messageID);
+			if (!values) return api.sendMessage("There is no baccarat table yet, you can create one using baicao create", threadID, messageID);
+			if (values.author !== senderID) return api.sendMessage("You don't have to be the table owner to start.", threadID, messageID);
+			if (values.player.length <= 1) return api.sendMessage("Currently your table has no players, you can invite them to join by asking other players to type baicao join", threadID, messageID);
+			if (values.start == 1) return api.sendMessage("The table is currently started by the table owner", threadID, messageID);
 			values.start = 1;
 			return api.sendMessage("Bàn bài cào của bạn được bắt đầu", threadID, messageID);
 		}
 
 		case "info":
 		case "-i": {
-			if (typeof values.player == "undefined") return api.sendMessage("Hiện tại chưa có bàn bài cào nào, bạn có thể tạo bằng cách sử dụng baicao create", threadID, messageID);
+			if (typeof values.player == "undefined") return api.sendMessage("There is no baccarat table yet, you can create one using baicao create", threadID, messageID);
 			return api.sendMessage(
-				"=== Bàn Bài Cào ===" +
-				"\n- Author Bàn: " + values.author +
-				"\n- Tổng số người chơi: " + values.player.length + " Người"
+				"=== Scratch Card Table ===" +
+"\n- Author Table: " + values.author +
+				"\n- number of players: " + values.player.length + " People"
 			, threadID, messageID);
 		}
 

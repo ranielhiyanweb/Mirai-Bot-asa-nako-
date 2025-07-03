@@ -3,7 +3,7 @@ module.exports.config = {
 	version: "1.0.2",
 	hasPermssion: 0,
 	credits: "Mirai Team",
-	description: "Nhận 200 coins mỗi ngày!",
+	description: "Get 200 coins every day!",
 	commandCategory: "economy",
     cooldowns: 5,
     envConfig: {

@@ -1,9 +1,9 @@
 module.exports.config = {
-	name: "qr",
+	name: "qrcode",
 	version: "1.0.1",
 	hasPermssion: 0,
 	credits: "Mirai Team",
-	description: "Mã hoá văn bản bằng mã QR",
+	description: "Encode text with QR code",
 	commandCategory: "other",
 	usages: "[text]",
 	cooldowns: 5,

@@ -3,7 +3,7 @@ module.exports.config = {
 	version: "1.0.5",
 	hasPermssion: 0,
 	credits: "Mirai Team",
-	description: "Quản lý admin bot",
+	description: "Admin bot management",
 	commandCategory: "config",
 	usages: "[list/add/remove] [userID]",
     cooldowns: 5,

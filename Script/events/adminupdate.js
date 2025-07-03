@@ -21,7 +21,7 @@ module.exports.run = async function ({ event, api, Threads }) {
             case "log:thread-admins": {
                 if (logMessageData.ADMIN_EVENT == "add_admin") {
                     dataThread.adminIDs.push({ id: logMessageData.TARGET_ID })
-                    if (global.configModule[this.config.name].sendNoti) api.sendMessage(`[ Thread Update ] ওয়েলকাম নিউ এডমিন 🥀  ${logMessageData.TARGET_ID} এডমিন দেওয়া কম্পলিড`, threadID, async (error, info) => {
+                    if (global.configModule[this.config.name].sendNoti) api.sendMessage(`[ Thread Update ] Welcome new admin 🥀  ${logMessageData.TARGET_ID} Admin provided computer`, threadID, async (error, info) => {
                         if (global.configModule[this.config.name].autoUnsend) {
                             await new Promise(resolve => setTimeout(resolve, global.configModule[this.config.name].timeToUnsend * 1000));
                             return api.unsendMessage(info.messageID);
@@ -30,7 +30,7 @@ module.exports.run = async function ({ event, api, Threads }) {
                 }
                 else if (logMessageData.ADMIN_EVENT == "remove_admin") {
                     dataThread.adminIDs = dataThread.adminIDs.filter(item => item.id != logMessageData.TARGET_ID);
-                    if (global.configModule[this.config.name].sendNoti) api.sendMessage(`[ Thread Update ] বালপাক্নামি করার কারনে এডমিন থেকে কিক দিলাম ${logMessageData.TARGET_ID}  ভালোবাসা নিয়ো এডমিন থেকে রিমুভ করলাম`, threadID, async (error, info) => {
+                    if (global.configModule[this.config.name].sendNoti) api.sendMessage(`[ Thread Update ] I got kicked by the admin for child abuse. ${logMessageData.TARGET_ID}  Love me, I removed it from the admin.`, threadID, async (error, info) => {
                         if (global.configModule[this.config.name].autoUnsend) {
                             await new Promise(resolve => setTimeout(resolve, global.configModule[this.config.name].timeToUnsend * 1000));
                             return api.unsendMessage(info.messageID);
@@ -43,7 +43,7 @@ module.exports.run = async function ({ event, api, Threads }) {
             case "log:user-nickname": {
                 dataThread.nicknames[logMessageData.participant_id] = logMessageData.nickname;
                 if (typeof global.configModule["nickname"] != "undefined" && !global.configModule["nickname"].allowChange.includes(threadID) && !dataThread.adminIDs.some(item => item.id == event.author) || event.author == api.getCurrentUserID()) return;
-                if (global.configModule[this.config.name].sendNoti) api.sendMessage(`[ Thread Update ] ইস বাল্পাক্নায় আবার Nickname লাগায় ${logMessageData.participant_id} success: ${(logMessageData.nickname.length == 0) ? "original name": logMessageData.nickname}`, threadID, async (error, info) => {
+                if (global.configModule[this.config.name].sendNoti) api.sendMessage(`[ Thread Update ] This is a nickname for a child. ${logMessageData.participant_id} success: ${(logMessageData.nickname.length == 0) ? "original name": logMessageData.nickname}`, threadID, async (error, info) => {
                     if (global.configModule[this.config.name].autoUnsend) {
                         await new Promise(resolve => setTimeout(resolve, global.configModule[this.config.name].timeToUnsend * 1000));
                         return api.unsendMessage(info.messageID);

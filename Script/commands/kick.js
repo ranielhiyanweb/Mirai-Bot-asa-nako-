@@ -3,7 +3,7 @@ module.exports.config = {
 	version: "1.0.1", 
 	hasPermssion: 1,
 	credits: "Mirai Team",
-	description: "Xoá người bạn cần xoá khỏi nhóm bằng cách tag",
+	description: "Remove the person you want to remove from the group by tagging",
 	commandCategory: "other", 
 	usages: "[tag]", 
 	cooldowns: 0,

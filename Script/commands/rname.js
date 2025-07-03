@@ -3,7 +3,7 @@ module.exports.config = {
 	version: "1.0.1",
 	hasPermssion: 0,
 	credits: "Mirai Team",
-	description: "Random biệt danh tiếng NHẬT 🤔",
+	description: "Random JAPANESE nickname 🤔",
 	commandCategory: "other",
 	cooldowns: 5,
 	dependencies: {

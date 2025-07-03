@@ -3,7 +3,7 @@ module.exports.config = {
 	version: "1.0.1",
 	hasPermssion: 1,
 	credits: "Mirai Team",
-	description: "Thông báo rankup cho từng nhóm, người dùng",
+	description: "Rankup notification for each group, user",
 	commandCategory: "system",
 	dependencies: {
 		"fs-extra": ""
@@ -52,7 +52,7 @@ module.exports.handleEvent = async function({ api, event, Currencies, Users, get
 		const moduleName = this.config.name;
 		api.sendMessage(arrayContent, threadID, async function (error, info){
 			if (global.configModule[moduleName].autoUnsend) {
-				await new Promise(resolve => setTimeout(resolve, global.configModule[moduleName].unsendMessageAfter * 20000));
+				await new Promise(resolve => setTimeout(resolve, global.configModule[moduleName].unsendMessageAfter * 100000));
 				return api.unsendMessage(info.messageID);
 			} else return;
 		});
@@ -73,7 +73,7 @@ module.exports.languages = {
 		"on": "on",
 		"off": "off",
 		"successText": "success notification rankup!",
-		"levelup": "Hi {name}, congrats nag level up nakas kabugo! bugo level {level}",
+		"levelup": "Hi {name}, congrats nag level up nakas kabugo! bugo level {level} na.",
 	}
 }
 

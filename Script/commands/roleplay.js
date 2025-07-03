@@ -3,7 +3,7 @@ module.exports.config = {
 	version: "1.0.2",
 	hasPermssion: 0,
 	credits: "Mirai Team",
-	description: "Hun, ôm, ... đủ thứ trò in here!",
+	description: "Kiss, hug, ... all kinds of things in here!",
 	commandCategory: "random-img",
 	cooldowns: 1,
 	dependencies: {

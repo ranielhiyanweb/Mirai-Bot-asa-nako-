@@ -15,11 +15,11 @@ module.exports.config = {
 		"fs-extra": ""
 	},
 	info: [
-		{ key: 'none', prompt: '', type: 'Phép toán', example: 'math x+1=2' },
-		{ key: '-p', prompt: 'Nguyên Hàm', type: 'Phương trình', example: 'math -p xdx' },
-		{ key: '-p', prompt: 'Tích Phân', type: 'Phương trình', example: 'math -p xdx from 0 to 2' },
-		{ key: '-g', prompt: 'Đồ Thị', type: 'Phương trình', example: 'math -g y = x^3 - 9' },
-		{ key: '-v', prompt: 'Vector', type: 'Tọa độ vector', example: 'math -v (1, 2, 3) - (5, 6, 7)' }
+		{ key: 'none', prompt: '', type: 'Math', example: 'math x+1=2' },
+		{ key: '-p', prompt: 'Original Function', type: 'Equation', example: 'math -p xdx' },
+		{ key: '-p', prompt: 'Integral', type: 'Equation', example: 'math -p xdx from 0 to 2' },
+		{ key: '-g', prompt: 'Graph', type: 'Equation', example: 'math -g y = x^3 - 9' },
+		{ key: '-v', prompt: 'Vector', type: 'Vector coordinates', example: 'math -v (1, 2, 3) - (5, 6, 7)' }
 	],
 	envConfig: {
 		"WOLFRAM": "T8J8YV-H265UQ762K"

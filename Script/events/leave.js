@@ -35,16 +35,7 @@ module.exports.run = async function ({ api, event, Users, Threads }) {
 
   // Default decorated message
   let msg = typeof threadData.customLeave === "undefined"
-    ? `╭───────────────╮\n` +
-      ` 🙋‍♂️ Member Left Notice\n` +
-      `╰───────────────╯\n\n` +
-      `👤 Name: ✨ ${name} ✨\n` +
-      `📤 Status: ${type}\n` +
-      `🕒 Time: ${time}\n` +
-      `📆 Session: ${session}\n\n` +
-      `💌 We hope you'll always remember the good times here.\n` +
-      `🔕 Don't follow their path if they did wrong.\n\n` +
-      `🕌 Stay united in this Islamic group 💙`
+    ? `left² pas ${name} wala rabay gamit sa gc.`
     : threadData.customLeave;
 
   // Replace placeholders in customLeave message

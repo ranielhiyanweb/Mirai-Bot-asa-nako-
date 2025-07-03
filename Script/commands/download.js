@@ -8,9 +8,9 @@ module.exports.config = {
   version: "1.0.0",
   hasPermssion: 0,
   credits: "Aminul Sordar",
-  description: "Tự động nhận link trong câu lệnh và tải video về",
+  description: "Automatically receive link in command and download video",
   commandCategory: "media",
-  usages: "[bất kỳ văn bản chứa link]",
+  usages: "[any text containing links]",
   cooldowns: 5,
   dependencies: {
     axios: "",
@@ -20,23 +20,12 @@ module.exports.config = {
 
 module.exports.languages = {
   en: {
-    wait: "⏳ Please wait... fetching video link.",
-    noLink: "⚠️ Please provide a valid video link.",
-    unsupported: "❌ Unsupported link or video not found.",
-    error: "🚫 Error downloading video. Please try again later."
+    wait: "",
+    noLink: " ",
+    unsupported: " ",
+    error: " "
   },
-  ar: {
-    wait: "⏳ الرجاء الانتظار... جاري جلب رابط الفيديو.",
-    noLink: "⚠️ يرجى تقديم رابط فيديو صالح.",
-    unsupported: "❌ الرابط غير مدعوم أو الفيديو غير موجود.",
-    error: "🚫 حدث خطأ أثناء تنزيل الفيديو. يرجى المحاولة لاحقًا."
-  },
-  vi: {
-    wait: "⏳ Vui lòng chờ... đang lấy link video.",
-    noLink: "⚠️ Vui lòng gửi kèm link video hợp lệ.",
-    unsupported: "❌ Link không hỗ trợ hoặc không tìm thấy video.",
-    error: "🚫 Lỗi khi tải video. Vui lòng thử lại sau."
-  }
+  
 };
 
 module.exports.run = async function({ api, event, args, getText }) {

@@ -3,7 +3,7 @@ module.exports.config = {
 	version: "1.0.1",
 	hasPermssion: 0,
 	credits: "Mirai Team",
-	description: "Gỡ tin nhắn của bot",
+	description: "Remove bot messages",
 	commandCategory: "system",
 	usages: "unsend",
 	cooldowns: 0

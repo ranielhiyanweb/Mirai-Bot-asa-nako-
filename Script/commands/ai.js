@@ -29,12 +29,6 @@ module.exports.config = {
 };
 
 module.exports.languages = {
-  "vi": {
-    noPrompt: "⚠️ ",
-    errorAPI: "❌ Unable to connect to Gemini API.",
-    noResponse: " No response from Gemini.",
-    imageFailed: "�️ Error when processing images with Gemini"
-  },
   "en": {
     noPrompt: "⚠️ Please provide a prompt or reply to an image!",
     errorAPI: "❌ Failed to connect to Gemini API.",

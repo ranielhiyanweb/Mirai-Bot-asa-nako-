@@ -3,7 +3,7 @@ module.exports.config = {
 	version: "1.0.0",
 	hasPermssion: 1,
 	credits: "Mirai Team",
-	description: "Bật tắt quyền sử dụng các lệnh NSFW",
+	description: "Enable or disable NSFW commands",
 	commandCategory: "system",
 	cooldowns: 5,
 };

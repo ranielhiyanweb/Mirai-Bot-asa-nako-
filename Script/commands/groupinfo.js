@@ -24,7 +24,7 @@ module.exports.languages = {
 🔧 Females: %7
 🔧 Admins: %8
 🔧 Total Messages: %9
-Made with ❤️ by: AMINUL-SORDAR`
+`
   },
   vi: {
     info: `
@@ -37,7 +37,7 @@ Made with ❤️ by: AMINUL-SORDAR`
 🔧 Nữ: %7
 🔧 Quản trị viên: %8
 🔧 Tổng tin nhắn: %9
-Tạo bởi ❤️: AMINUL-SORDAR`
+`
   }
 };
 

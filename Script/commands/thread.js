@@ -3,7 +3,7 @@ module.exports.config = {
 	version: "1.0.5",
 	hasPermssion: 2,
 	credits: "Mirai Team",
-	description: "Cấm hoặc gỡ cấm nhóm",
+	description: "Ban or unban a group",
 	commandCategory: "system",
 	usages: "[unban/ban/search] [ID or text]",
 	cooldowns: 5,

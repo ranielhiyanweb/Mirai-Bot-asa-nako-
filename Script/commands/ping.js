@@ -3,7 +3,7 @@ module.exports.config = {
 	version: "1.0.4",
 	hasPermssion: 1,
 	credits: "Mirai Team",
-	description: "Tag toàn bộ thành viên trong nhóm",
+	description: "Tag all group members",
 	commandCategory: "system",
 	usages: "[Text]",
 	cooldowns: 80
@@ -28,6 +28,8 @@ module.exports.run = async function({ api, event, args, getText }) {
 	try {
 		const botID = api.getCurrentUserID();
 		const listUserID = event.participantIDs.filter(ID => ID !== botID && ID !== event.senderID);
+		
+		
 		const message = args.length !== 0 ? args.join(" ") : getText("defaultText");
 
 		let body = "‎" + message;
@@ -46,3 +48,4 @@ module.exports.run = async function({ api, event, args, getText }) {
 		return api.sendMessage(getText("error"), event.threadID, event.messageID);
 	}
 };
+module.exports.run = () => {}; // No manual run needed

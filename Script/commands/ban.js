@@ -1,9 +1,9 @@
 module.exports.config = {
-	name: "user",
+	name: "ban",
 	version: "1.0.5",
 	hasPermssion: 2,
 	credits: "Mirai Team",
-	description: "Cấm hoặc gỡ cấm người dùng",
+	description: "Ban or unban users",
 	commandCategory: "system",
 	usages: "[unban/ban/search] [ID or text]",
 	cooldowns: 5

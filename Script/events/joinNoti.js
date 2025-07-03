@@ -13,10 +13,9 @@ module.exports.run = async function({ api, event }) {
 
   // যদি বটকে কেউ গ্রুপে অ্যাড করে
   if (event.logMessageData.addedParticipants.some(i => i.userFbId == api.getCurrentUserID())) {
-    await api.changeNickname(`[ ${global.config.PREFIX} ] • ${global.config.BOTNAME || "MIRAI-BOT-LOVER"}`, threadID, api.getCurrentUserID());
+    await api.changeNickname(`[ ${global.config.PREFIX} ] • ${global.config.BOTNAME || "Raniela's Bot"}`, threadID, api.getCurrentUserID());
     return api.sendMessage(
-      `╭╭•┄┅═══❁🌺❁═══┅┄•╮\n🖤 আসসালামু আলাইকুম 🖤\n╰•┄┅═══❁🌺❁═══┅┄•╯\n\n┏━━━━━━━━━━━━━━━━━┓\n┃ 🤗 𝐓𝐡𝐚𝐧𝐤 𝐲𝐨𝐮 𝐬𝐨 𝐦𝐮𝐜𝐡┃\n┃ 𝐟𝐨𝐫 𝐚𝐝𝐝𝐢𝐧𝐠 𝐦𝐞 𝐭𝐨 𝐲𝐨𝐮𝐫 ┃\n┃ 🫶 𝐠𝐫𝐨𝐮𝐩 𝐟𝐚𝐦𝐢𝐥𝐲!     ┃\n┗━━━━━━━━━━━━━━━━━┛\n\n📿 *ইনশাআল্লাহ আমি সবসময় আপনাদের সেবা করব।*\n🌸 *ভালো ব্যবহারে আরও ভালো সার্ভিস পাবেন।*\n\n╭─🎯 𝐔𝐒𝐄𝐅𝐔𝐋 𝐂𝐎𝐌𝐌𝐀𝐍𝐃𝐒 ─╮\n│ ℹ️ ${global.config.PREFIX}info – বট সম্পর্কিত তথ্য  \n│ 💬 ${global.config.PREFIX}jan – স্মার্ট AI এর সাথে চ্যাট করুন  \n│ ⏱️ ${global.config.PREFIX}uptime – বট চালু থাকার সময় দেখুন  \n╰────────────────────────╯\n\n🔧 𝐁𝐎𝐓 𝐍𝐀𝐌𝐄 : *MIRAI-BOT*\n🧑‍💻 𝐃𝐄𝐕𝐄𝐋𝐎𝐏𝐄𝐃 𝐁𝐘 : *Aminul Sordar*\n\n⋆✦⋆⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⋆✦⋆`, 
-      threadID
+      `┏━━━━━━━━━━━━━━━━━┓\n┃ 🤗 𝐓𝐡𝐚𝐧𝐤 𝐲𝐨𝐮 𝐬𝐨 𝐦𝐮𝐜𝐡┃\n┃ 𝐟𝐨𝐫 𝐚𝐝𝐝𝐢𝐧𝐠 𝐦𝐞 𝐭𝐨 𝐲𝐨𝐮𝐫 ┃\n┃ 🫶 𝐠𝐫𝐨𝐮𝐩 𝐟𝐚𝐦𝐢𝐥𝐲!     ┃\n┗━━━━━━━━━━━━━━━━━┛`,  threadID
     );
   } else {
     try {
@@ -34,7 +33,7 @@ module.exports.run = async function({ api, event }) {
 
       const memberCount = participantIDs.length;
       let msg = threadData.customJoin || 
-`╭•┄┅═══❁🌺❁═══┅┄•╮\n   আসসালামু আলাইকুম-!!🖤\n╰•┄┅═══❁🌺❁═══┅┄•╯ \n\n✨🆆🅴🅻🅻 🅲🅾🅼🅴 ✨\n\n❥ 𝐍𝐄𝐖~ 𝐌𝐄𝐌𝐁𝐄𝐑 : {name}\n\n🌸 আপনাকে আমাদের গ্রুপ –\n{threadName} – এ স্বাগতম!\n\nআপনি এখন আমাদের {soThanhVien} নং সদস্য 🥰\n\n╭•┄┅═══❁🌺❁═══┅┄•╮\n     🌸  MIRAI-BOT  🌸\n╰•┄┅═══❁🌺❁═══┅┄•╯`;
+`✨🆆🅴🅻🅻 🅲🅾🅼🅴 ✨\n\n❥ 𝐍𝐄𝐖~ 𝐌𝐄𝐌𝐁𝐄𝐑 : {name}\n\n🌸 You are welcome in our group – {threadName}\nYou are now our {soThanhVien} member number 🥰\n\n╭•┄┅═══❁🌺❁═══┅┄•╮\n     🌸 Raniela's Bot🌸\n╰•┄┅═══❁🌺❁═══┅┄•╯`;
 
       msg = msg
         .replace(/\{name}/g, nameArray.join(', '))

@@ -26,14 +26,14 @@ module.exports.languages = {
     onlyFilesNoReply: "only files with no reply 🌸",
   },
   ar: {
-    noReportContent: "❌ لم تدخل ما تريد الإبلاغ عنه 📋",
-    successSend: (count) => `✅ تم إرسال رسالتك إلى ${count} مسؤول(ين) بنجاح 🍄`,
+    noReportContent: "❌ You did not enter what you want to report 📋",
+    successSend: (count) => `✅ Your message has been sent to ${count} administrator(s) successfully 🍄`,
     reportFrom: (name, uid, threadName, threadID, inbox, time) =>
-      `📱 [ اتصال بالمسؤول ] 📱\n\n👤 تقرير من: ${name}\n🆔 معرف المستخدم: ${uid}\n📂 الصندوق: ${threadName}\n🆔 معرف الصندوق: ${threadID}\n\n💌 المحتوى: ${inbox}\n⏰ الوقت: ${time}`,
+      `📱 [ Contact Admin ] 📱\n\n👤 Report from: ${name}\n🆔 User ID: ${uid}\n💌 Content: ${inbox}\n\n⏰ Time: ${time}`,
     feedbackFromAdmin: (name) =>
-      `📌 ملاحظات من المسؤول ${name} إليك:\n\n💬 المحتوى أدناه\n\n» رد على هذه الرسالة إذا أردت متابعة الإبلاغ.`,
-    noReply: "لا رد 🌸",
-    onlyFilesNoReply: "ملفات فقط بدون رد 🌸",
+      `📌 Notes from admin ${name} to you:\n\n💬 Content below\n\n» Reply to this message if you want to continue reporting.`,
+    noReply: "No response 🌸",
+    onlyFilesNoReply: "Only files without reply 🌸",
   },
   vi: {
     noReportContent: "❌ Bạn chưa nhập nội dung báo cáo 📋",

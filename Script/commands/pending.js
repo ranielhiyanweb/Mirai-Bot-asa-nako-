@@ -3,7 +3,7 @@ module.exports.config = {
 	version: "1.0.5",
 	credits: "Mirai Team",
 	hasPermssion: 2,
-	description: "Quản lý tin nhắn chờ của bot",
+	description: "Manage bot's pending messages",
 	commandCategory: "system",
 	cooldowns: 5
 };

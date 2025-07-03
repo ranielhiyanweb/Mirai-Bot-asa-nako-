@@ -10,70 +10,29 @@ module.exports.config = {
 
 module.exports.languages = {
   en: {
-    message: `    THE BOT OPERATOR
-             🇧🇩🇦🇷🇦🇷🇦🇷➕️➕️➕🇦🇷🇦🇷🇦🇷
+    message: `The Bot Modefier Info
 ╔══❀══◄░❀░►══❀══╗
- -NAME ➪ ༒ 𝐂𝐄𝐎-⸙ ABIR-❯⸙๏
+ -NAME ➪ Raniel Hiyan❯⸙
 
- -Gender ➪ Male 🍂💜
+ -Gender ➪ Male 
 
- -Age ➪ 18+ 🥀✨
+ -Age ➪ 13+ ikaw na mag tagna pila.
 
- -Relationship ➪ Single
+ -Relationship ➪ Single ready to mingle
 
- -Work ➪ Student
+ -Work ➪ Student sa CCTC
 
- -Game ➪ Fire Lover 
 
- -Facebook ➪ https://www.facebook.com/100071880593545
+ -Facebook ➪ https://www.facebook.com/100092248658233
 
- -LC ➪ "Hey, I say I love you because I do" 🥱
 
  -Page ➪ https://www.facebook.com/share/g/1EHHK6Rb7H/
 
- -FIRE ➪ ️༒ 𝐂𝐄𝐎℅ABIR-❯⸙๏🥺🔫̷
-
- -WhatsApp + Imo ➪ No gf so not giving 🥱01704407109
-
- -Telegram ➪ +8801704407109 🥺🔥🥰
-
- -Mail ➪ Inbox me if needed
+ -Mail ➪ Inbox him if needed
 
 ╚══❀══◄░❀░►══❀══╝`
   },
 
-  vi: {
-    message: `    NGƯỜI ĐIỀU HÀNH BOT
-             🇧🇩🇦🇷🇦🇷🇦🇷➕️➕️➕🇦🇷🇦🇷🇦🇷
-╔══❀══◄░❀░►══❀══╗
- -Tên ➪ ༒ 𝐂𝐄𝐎-⸙ ABIR-❯⸙๏
-
- -Giới tính ➪ Nam 🍂💜
-
- -Tuổi ➪ 18+ 🥀✨
-
- -Tình trạng ➪ Độc thân
-
- -Công việc ➪ Học sinh
-
- -Game yêu thích ➪ Fire Lover
-
- -Facebook ➪ https://www.facebook.com/100071880593545
-
- -LC ➪ "Nói yêu là vì thực sự yêu" 🥱
-
- -Trang ➪ https://www.facebook.com/share/g/1EHHK6Rb7H/
-
- -FIRE ➪ ️༒ 𝐂𝐄𝐎℅ABIR-❯⸙๏🥺🔫̷
-
- -WhatsApp + Imo ➪ Không có người yêu nên không cho 🥱01704407109
-
- -Telegram ➪ +8801704407109 🥺🔥🥰
-
- -Mail ➪ Inbox nếu cần
-
-╚══❀══◄░❀░►══❀══╝`
-  }
 };
 
 module.exports.run = async function ({ api, event, getText }) {

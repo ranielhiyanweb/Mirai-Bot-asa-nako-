@@ -3,7 +3,7 @@ module.exports.config = {
 	version: "1.0.1",
 	hasPermssion: 0,
 	credits: "Mirai Team",
-	description: "Tính thời gian đi ngủ hoàn hảo cho bạn",
+	description: "Calculate the perfect bedtime for you",
 	commandCategory: "health",
 	usages: "[Time]",
 	cooldowns: 5,
