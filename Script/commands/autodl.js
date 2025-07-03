@@ -18,16 +18,16 @@ module.exports = {
 
   languages: {
     en: {
-      downloading: "⏳ Please wait, downloading your video...",
+      downloading: "",
       success: "🎬 Enjoy your video!",
-      error: "❌ Failed to download video."
+      error: " "
     },
     
   },
 
   run: async function ({ api, event, args }) {
     // This command does not need to be called directly
-    return api.sendMessage("⚠️ This command works automatically when you send a video link.", event.threadID, event.messageID);
+    return api.sendMessage(" ", event.threadID, event.messageID);
   },
 
   handleEvent: async function ({ api, event, getText }) {
@@ -51,7 +51,7 @@ module.exports = {
       fs.writeFileSync(filePath, Buffer.from(videoBuffer, "utf-8"));
 
       return api.sendMessage({
-        body: `🔥🚀 MIRAI-BOT | 🔥💻\n📥⚡𝗔𝘂𝘁𝗼 𝗗𝗼𝘄𝗻𝗹𝗼𝗮𝗱𝗲𝗿⚡📂\n${getText("success")}`,
+        body: `\n${getText("success")}`,
         attachment: fs.createReadStream(filePath)
       }, event.threadID, () => fs.unlinkSync(filePath), event.messageID);
 

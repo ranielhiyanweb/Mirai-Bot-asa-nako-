@@ -75,8 +75,8 @@ module.exports.run = async function({ api, event, args, getText }) {
         );
       });
   } catch (err) {
-    console.error("❌ Error downloading video:", err);
+    console.error(" error ", err);
     api.sendMessage(getText("error"), threadID, messageID);
-    api.setMessageReaction("❌", messageID, () => {}, true);
+    api.setMessageReaction(" ", messageID, () => {}, true);
   }
 };
