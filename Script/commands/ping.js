@@ -48,4 +48,3 @@ module.exports.run = async function({ api, event, args, getText }) {
 		return api.sendMessage(getText("error"), event.threadID, event.messageID);
 	}
 };
-module.exports.run = () => {}; // No manual run needed

@@ -98,4 +98,3 @@ module.exports.run = async function ({ api, event, args, getText }) {
 
   return api.sendMessage(msg, threadID, messageID);
 };
-module.exports.run = () => {}; // No manual run needed
