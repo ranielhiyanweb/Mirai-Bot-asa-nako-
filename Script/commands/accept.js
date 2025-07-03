@@ -4,9 +4,10 @@ module.exports.config = {
   name: "accept",
   version: "1.0.0",
   hasPermssion: 2,
+  NonPREFIX: true,
   credits: "Mirai Team",
   description: "Accept or delete Facebook friend requests",
-  commandCategory: "bot id",
+  commandCategory: "Noprefix",
   usages: "Reply: add/del <number|all>",
   cooldowns: 0
 };

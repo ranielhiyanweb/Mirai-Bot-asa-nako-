@@ -7,7 +7,7 @@ module.exports.config = {
   description: "goibot",
   commandCategory: "Noprefix",
   usages: "noprefix",
-  cooldowns: 5,
+  cooldowns: 1,
 };
 module.exports.handleEvent = async function({ api, event, args, Threads, Users }) {
   var { threadID, messageID, reason } = event;
@@ -17,40 +17,67 @@ module.exports.handleEvent = async function({ api, event, args, Threads, Users }
   var id = event.senderID;
   var name = await Users.getNameUser(event.senderID);
 
-  var tl = ["ayaw sigeg mention og 'bot' bi kay nag pahuwaybko, mototoy ka?", "sige kag bot bot bot last nalang jud ka.", "ayaw sigeg panawag og bot gikapoy pako.",];
+  var tl = [" ayaw sigeg pangita nako. " , "sa owner napud pangita kay pwede ma bbtym ayaw sigeg bot, bot, bot...!" , "ayaw sigeg pangita nako naa nakoy uyab" ,];
   var rand = tl[Math.floor(Math.random() * tl.length)]
 
-     return api.sendMessage("ayaw sigeg tawag nako, last nalang na imong chat nga bot pusilon tika", threadID);
+    if ((event.body.toLowerCase() == "eve") || (event.body.toLowerCase() == "evening") || (event.body.toLowerCase() == "good evening")) {
+     return api.sendMessage("maayong gabie saimo, katulog na kung wala kay ka bbtym.", threadID);
    };
 
     
-   
-    if ((event.body.toLowerCase() == "👍") || (event.body.toLowerCase() == "👍")) {
-     return api.sendMessage("bawal mag lz diri, kick tika ron.", threadID);
-   };
-  
-   
-   if ((event.body.toLowerCase() == "hi") || (event.body.toLowerCase() == "hello") ||(event.body.toLowerCase() == "hlw") || (event.body.toLowerCase() == "helo")) {
-     return api.sendMessage("hi Hello tara sha...", threadID);
-   };
+     
 
-
-   
 
    if ((event.body.toLowerCase() == "morning") || (event.body.toLowerCase() == "good morning")) {
      return api.sendMessage("Hello dear, have a nice day ❤️", threadID);
    };
 
-   if ((event.body.toLowerCase() == "anyone") || (event.body.toLowerCase() == "(_-_(_+_-")) {
-     return api.sendMessage("Wala si anyone sorry", threadID);
+   if ((event.body.toLowerCase() == "anyone") || (event.body.toLowerCase() == "any")) {
+     return api.sendMessage("Main Hun Naw JaNyMan ❤️", threadID);
    };
 
-   if ((event.body.toLowerCase() == "raniel") || (event.body.toLowerCase() == "Hiyan") || (event.body.toLowerCase() == "hiyan") || (event.body.toLowerCase() == "@Raniel Hiyan")) {
-     return api.sendMessage( "ayaw sigeg pangita ana niya kung dili man gani nimo jowaon.",threadID); 
+   if ((event.body.toLowerCase() == "aminul") || (event.body.toLowerCase() == "aminul sordar") || (event.body.toLowerCase() == "Aminul") || (event.body.toLowerCase() == "@Aminul Sordar")) {
+     return api.sendMessage( "উনি এখন কাজে বিজি আছে যা বলার আমাকে বলতে পারেন😘",threadID);
+
+       
+   };
+
+   if ((event.body.toLowerCase() == "owner") || (event.body.toLowerCase() == "Owner")) {
+     return api.sendMessage("‎ang owner natulog kay walay ka bbtym haha", threadID);
+   };
+
+  
+
+   if ((event.body.toLowerCase() == "nobody loves me") || (event.body.toLowerCase() == "nobody love me")) {
+     return api.sendMessage("️lab man ttaka \n\n-admin sa pm", threadID);
    };
 
    
    
+   if ((event.body.toLowerCase() == "😂") || (event.body.toLowerCase() == "😁") || (event.body.toLowerCase() == "😆") || (event.body.toLowerCase() == "🤣") || (event.body.toLowerCase() == "😸") || (event.body.toLowerCase() == "😹")) {
+     return api.sendMessage("Brother, if you don't smile so much, you look like a thief..!", threadID);
+   };
+
+   if ((event.body.toLowerCase() == "🥰") || (event.body.toLowerCase() == "😍") || (event.body.toLowerCase() == "😻") || (event.body.toLowerCase() == "❤️")) {
+     return api.sendMessage("If you want to talk nonsense called love, go to Raniel Hiyan messenger, you crazy goat🌚🐸🌶️", threadID);
+   };
+
+   
+
+   if ((event.body.toLowerCase() == "is the bot sad") || (event.body.toLowerCase() == "is the bot sad")) {
+     return api.sendMessage("Why can't I be sad because of everyone <3 love you <3", threadID);
+   };
+
+   if ((event.body.toLowerCase() == "i love you") || (event.body.toLowerCase() == "Love you") || (event.body.toLowerCase() == "I Love You") || (event.body.toLowerCase() == "ভালোবাসি") || (event.body.toLowerCase() == "i love you")) {
+     return api.sendMessage("nya lab ka?", threadID);
+   };
+
+     
+
+   if ((event.body.toLowerCase() == "kaon namo") || (event.body.toLowerCase() == "Kaon namo")) {
+     return api.sendMessage("I'm full when I see you eat <3", threadID);
+   };
+
    mess = "{name}"
   
   if (event.body.indexOf("Bot") == 0 || (event.body.indexOf("bot") == 0)) {
@@ -60,5 +87,6 @@ module.exports.handleEvent = async function({ api, event, args, Threads, Users }
     return api.sendMessage(msg, threadID, messageID);
   };
 
+}
 
 module.exports.run = function({ api, event, client, __GLOBAL }) { }
