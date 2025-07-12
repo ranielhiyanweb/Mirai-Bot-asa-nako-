@@ -25,7 +25,7 @@ module.exports.run = async ({ event, api, Threads, Users }) => {
         );
       } else {
         api.sendMessage(
-          `bawal mo left ${name} kay mga tisoy/tisay ta diri \n\n-admin sa pm.`,
+          `bawal mo left ${name} kay mga tisoy/tisay ta diri \n\n-Raniel sa pm.`,
           event.threadID
         );
       }

@@ -35,7 +35,7 @@ module.exports.run = async function ({ api, event, Users, Threads }) {
 
   // Default decorated message
   let msg = typeof threadData.customLeave === "undefined"
-    ? `HAHAHA si ${name} gi kick sa admin kay walay gamit😆😆😆`
+    ? `left² pas ${name}, rag nay gamay HAHA`
     : threadData.customLeave;
 
   // Replace placeholders in customLeave message
